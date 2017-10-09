@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div ng-repeat="user in $ctrl.users | filter: $ctrl.userId : true" class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{user.name}}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-3">
+              <img class="thumbnail avatar" ng-src="{{user.imageUrl}}"/>
+            </div>
+            <div class="col-md-9">
+              <span class="label label-default">Repos </span>
+              <span class="label label-primary">Gists </span>
+              <span class="label label-success">Followers </span>
+              <span class="label label-info">Following </span>
+              <br><br>
+              <ul class="list-group">
+                <li class="list-group-item"><strong>Company:</strong> {{user.company}} </li>
+                <li class="list-group-item"><strong>Gender:</strong> {{user.gender}} </li>
+                <li class="list-group-item"><strong>Phone:</strong> {{user.phone}} </li>
+                <li class="list-group-item"><strong>Email:</strong> {{user.email}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 well">
+      <div class="form-group">
+        <h1>Search Users</h1>
+        <input ng-model="$ctrl.query" type="text" class="form-control">
+      </div>
+        Sort by:
+        <select ng-model="$ctrl.orderProp" class="form-control">
+          <option value="name">A->Z</option>
+          <option value="id">Newest</option>
+        </select>
+    </div>
+
+    <div class="col-md-12">
+      <div ng-repeat="user in $ctrl.users | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{user.name}}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-3">
+              <img class="thumbnail avatar" ng-src="{{user.imageUrl}}"/>
+              <a href="#!/users/{{user.id}}" class="btn btn-primary btn-block">View Profile</a>
+            </div>
+            <div class="col-md-9">
+              <span class="label label-default">Skill </span>
+              <span class="label label-primary">Experience </span>
+              <span class="label label-success">Followers </span>
+              <span class="label label-info">Following </span>
+              <br><br>
+              <ul class="list-group">
+                <li class="list-group-item">{{user.snippet}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
